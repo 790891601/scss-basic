@@ -1,0 +1,155 @@
+/**
+ * @params {flex-start} $justify 左边距
+ * @params {flex-start} $align 上边距
+ * @params {row|row-reserve|column|column-reserve} $direction 定位方式
+ * @params {nowrap|wrap} $wrap 是否换行
+ */
+@mixin flex($justify:flex-start, $align:flex-start, $direction, $wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+/**
+ * @params {px} $left 左边距
+ * @params {px} $top 上边距
+ * @params {absolute|fixed} $position 定位方式
+ */
+@mixin plt($left:0px, $top:0px,$position:absolute,$transformX,$transformY) {
+  position: $position;
+  left: $left;
+  top: $top;
+  @if $transformX {
+    transform: translate($transformX, $transformY);
+  }@else {
+    transform: translate(-$left, -$top);
+  }
+}
+/**
+ * @params {px} $right 右边距
+ * @params {px} $bottom 下边距
+ * @params {absolute|fixed} $position 定位方式
+ */
+ @mixin prb($right:0px,$bottom:0px, $position:absolute,$transformX,$transformY) {
+  position: $position;
+  right: $right;
+  bottom: $bottom;
+  @if $transformX {
+    transform: translate($transformX, $transformY);
+  }
+}
+/**
+ * 宽高
+ * @params {px} $width 宽度
+ * @params {px} $height 高度
+ */
+@mixin wh($width: auto, $height: auto, $borderRadius...) {
+  width: $width;
+  height: $height;
+  @if $borderRadius {
+    border-radius: $borderRadius;
+  }
+}
+/**
+ * 单行省略
+ * @params {px} $width 宽度
+ */
+@mixin oneEllipsis($width) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: $width;
+}
+/**
+ * 多行省略
+ * @params {px} $line 行数
+ * 兼容性：IE10+
+ */
+@mixin moreEllipsis($line: 2) {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+/**
+ * 文字垂直居中
+ * @params {px} $height 高度
+ */
+@mixin lh($height) {
+  height: $height;
+  line-height: $height;
+}
+/**
+ * 文本
+ * @params {px} $fontSize 字体大小
+ * @params {px} $color 颜色
+ * @params {px} $textAlign 文本对齐方式
+ */
+@mixin text($fontSize, $color, $textAlign, $textDecoration) {
+  font-size: $fontSize;
+  color: $color;
+  @if $textAlign {
+    text-align: $textAlign;
+  }
+  @if $textDecoration {
+    text-decoration: $textDecoration;  
+  }
+}
+/**
+ * 按钮样式
+ * @params {px} $width 高度
+ * @params {px} $lineHeight 行高
+ * @params {px} $color 高度
+ * @params {px} $backgroundColor 背景颜色
+ * @params {px} $borderWidth 边框宽度
+ * @params {px} $borderColor 边框颜色
+ * @params {type} $borderStyle 边框样式
+ */
+@mixin button($width, $lineHeight, $color: #000, $backgroundColor: white, $borderWidth, $borderColor:white, $borderStyle: solid) {
+  width: $width;
+  -webkit-appearance: none; /* 去除ios按钮默认样式 */
+  height: $lineHeight; /* 保证手机的兼容性 */
+  line-height: $lineHeight;
+  text-align: center;
+  color: $color;
+  background-color: $backgroundColor;
+  cursor: pointer;
+
+  /* 按钮是否需要边框 */
+  @if $borderWidth {
+    border: {
+      width: $borderWidth;
+      color: $borderColor;
+      style: $borderStyle;
+    };
+  }
+}
+/**
+ * 容器
+ * @params {px} $width 宽度
+ * @params {px} $margin 外边距
+ */
+@mixin container($width, $margin, $backgroundColor: white) {
+  width: $width;
+  margin: 0 auto;
+  background-color: $backgroundColor;
+}
+
+/**
+ * 滚动容器
+ * @params {} $overflowY 竖向滚动条
+ * @params {} $overflowX 横向滚动条
+ * @params {} $width 宽度 
+ * @params {} $height 高度
+ */
+@mixin scroll($overflowY: auto, $overflowX: auto, $width, $height) {
+  overflow-x: $overflowX;
+  overflow-y: $overflowY;
+  @include wh($width, $height);
+}
