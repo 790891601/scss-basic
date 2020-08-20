@@ -4,30 +4,26 @@
  * @params {row|row-reserve|column|column-reserve} $direction 定位方式
  * @params {nowrap|wrap} $wrap 是否换行
  */
-@mixin flex($justify:flex-start, $align:flex-start, $direction, $wrap) {
+@mixin flex($justify:flex-start, $align:flex-start, $direction:row, $wrap:nowrap) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
-  @if $direction {
-    flex-direction: $direction;
-  }
-  @if $wrap {
-    flex-wrap: $wrap;
-  }
+  flex-direction: $direction;
+  flex-wrap: $wrap;
 }
 /**
  * @params {px} $left 左边距
  * @params {px} $top 上边距
  * @params {absolute|fixed} $position 定位方式
  */
-@mixin plt($left:0px, $top:0px,$position:absolute,$transformX,$transformY) {
+@mixin plt($left:0px, $top:0px,$position:absolute,$transformX:0px,$transformY:0px) {
   position: $position;
   left: $left;
   top: $top;
-  @if $transformX {
-    transform: translate($transformX, $transformY);
-  }@else {
+  @if $transformX == 0px {
     transform: translate(-$left, -$top);
+  }@else {
+    transform: translate($transformX, $transformY);
   }
 }
 /**
@@ -35,11 +31,11 @@
  * @params {px} $bottom 下边距
  * @params {absolute|fixed} $position 定位方式
  */
- @mixin prb($right:0px,$bottom:0px, $position:absolute,$transformX,$transformY) {
+ @mixin prb($right:0px,$bottom:0px, $position:absolute,$transformX:0px,$transformY:0px) {
   position: $position;
   right: $right;
   bottom: $bottom;
-  @if $transformX {
+  @if $transformX != 0px {
     transform: translate($transformX, $transformY);
   }
 }
@@ -111,7 +107,7 @@
  * @params {px} $borderColor 边框颜色
  * @params {type} $borderStyle 边框样式
  */
-@mixin button($width, $lineHeight, $color: #000, $backgroundColor: white, $borderWidth, $borderColor:white, $borderStyle: solid) {
+@mixin button($width, $lineHeight, $color: #000, $backgroundColor: white, $borderWidth:0px, $borderColor:white, $borderStyle: solid) {
   width: $width;
   -webkit-appearance: none; /* 去除ios按钮默认样式 */
   height: $lineHeight; /* 保证手机的兼容性 */
@@ -122,7 +118,7 @@
   cursor: pointer;
 
   /* 按钮是否需要边框 */
-  @if $borderWidth {
+  @if $borderWidth != 0px {
     border: {
       width: $borderWidth;
       color: $borderColor;
@@ -148,7 +144,7 @@
  * @params {} $width 宽度 
  * @params {} $height 高度
  */
-@mixin scroll($overflowY: auto, $overflowX: auto, $width, $height) {
+@mixin scroll($overflowY: auto, $overflowX: auto, $width:auto, $height:auto) {
   overflow-x: $overflowX;
   overflow-y: $overflowY;
   @include wh($width, $height);

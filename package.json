@@ -1,16 +1,23 @@
 {
-  "name": "CSS",
-  "version": "1.0.0",
-  "description": "This is a css baseic",
-  "main": "index.js",
+  "name": "scss-basic",
+  "version": "1.0.5",
+  "description": "This is a scss basic",
+  "main": "src/helpler.scss",
   "scripts": {
-    "start": "./node_modules/.bin/cpy src/*.css ./dist"
+    "start": "run-p build:dev watch",
+    "build": "run-s clean postcss copy",
+    "build:dev": "run-s copy",
+    "clean": "rimraf dist",
+    "copy": "cpy src/*.scss !src/*.min.scss docs/css",
+    "watch": "onchange src -- run-p build:dev"
   },
   "keywords": [
-    "css",
-    "css-baseic",
+    "scss-basic",
     "sass"
   ],
+  "bugs": {
+    "email": "790891601@qq.com"
+  },
   "author": "chen ruixuan",
   "license": "MIT",
   "devDependencies": {

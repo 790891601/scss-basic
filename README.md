@@ -1,5 +1,11 @@
 # css-baseic
+This is a scss basic.
 
+## install 
+npm install scss-basic
+
+## use
+var sassBasic = require('sass-basic')
 
 ## Overview
 
