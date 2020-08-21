@@ -1,0 +1,640 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>mixins · CSS-Basic</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Visioniers">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../styles/" />
+    
+    
+    <link rel="prev" href="../preface/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">基本使用</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../preface/">
+            
+                <a href="../preface/">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../styles/">
+            
+                <a href="../styles/">
+            
+                    
+                    styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">扩展</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../plugins.md">
+            
+                <span>
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../themes.md">
+            
+                <span>
+            
+                    
+                    主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../bookjson.md">
+            
+                <span>
+            
+                    
+                    bookjson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >mixins</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mixins">mixins</h1>
+<h3 id="flex">flex</h3>
+<p>flex&#x5E03;&#x5C40;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">justify-content</td>
+<td style="text-align:center">flex-start</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">align-items</td>
+<td style="text-align:center">flex-start</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">flex-direction</td>
+<td style="text-align:center">row</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">flex-wrap</td>
+<td style="text-align:center">nowrap</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="position">position</h3>
+<p>&#x5B9A;&#x4F4D;&#x65B9;&#x5F0F;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">top</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">right</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">bottom</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">left</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">position</td>
+<td style="text-align:center">absolute</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">transformX</td>
+<td style="text-align:center">0px</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">transformY</td>
+<td style="text-align:center">0px</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wh">wh</h3>
+<p>&#x5BBD;&#x5EA6;&#x9AD8;&#x5EA6;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">width</td>
+<td style="text-align:center">auto</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">height</td>
+<td style="text-align:center">auto</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">border-radius</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oneellipsis">oneEllipsis</h3>
+<p>&#x5355;&#x884C;&#x7701;&#x7565;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">width</td>
+<td style="text-align:center">auto</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moreellipsis">moreEllipsis</h3>
+<p>&#x591A;&#x884C;&#x7701;&#x7565;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">line</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lh">lh</h3>
+<p>&#x6587;&#x5B57;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">height</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="text">text</h3>
+<p>&#x6587;&#x672C;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">font-size</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td style="text-align:center">text-align</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">text-decoration</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="button">button</h3>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x6309;&#x94AE;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">width</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td style="text-align:center">line-height</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:center">#000</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">backgroundColor</td>
+<td style="text-align:center">white</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">borderWidth</td>
+<td style="text-align:center">0px</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">borderColor</td>
+<td style="text-align:center">white</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">borderStyle</td>
+<td style="text-align:center">solid</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="container">container</h3>
+<p>&#x5BB9;&#x5668;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">width</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td style="text-align:center">margin</td>
+<td style="text-align:center">0 auto</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">background-color</td>
+<td style="text-align:center">white</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scroll">scroll</h3>
+<p>&#x6EDA;&#x52A8;&#x5BB9;&#x5668;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">overflow-x</td>
+<td style="text-align:center">auto</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">overflow-y</td>
+<td style="text-align:center">auto</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">width</td>
+<td style="text-align:center">auto</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td style="text-align:center">height</td>
+<td style="text-align:center">auto</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="clearfix">clearfix</h3>
+<p>&#x6E05;&#x9664;&#x6D6E;&#x52A8;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:center">&#x5FC5;&#x586B;&#x9879;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../preface/" class="navigation navigation-prev " aria-label="Previous page: 前言">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../styles/" class="navigation navigation-next " aria-label="Next page: styles">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"mixins","level":"1.3","depth":1,"next":{"title":"styles","level":"1.4","depth":1,"path":"styles/README.md","ref":"./styles/README.md","articles":[]},"previous":{"title":"前言","level":"1.2","depth":1,"path":"preface/README.md","ref":"./preface/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Visioniers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"微软雅黑","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CSS-Basic","output.name":"build-web-application-with-css-basic-zh","gitbook":"*","description":"build-web-application-with-css-basic"},"file":{"path":"mixins/README.md","mtime":"2020-08-21T08:15:37.040Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-21T09:03:47.485Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
