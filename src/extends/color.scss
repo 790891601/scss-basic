@@ -1,0 +1,10 @@
+@import "../variables/variables.scss";
+
+@each $color in $colors {
+  .#{$prefix}text-#{$color} {
+    color: $color;
+  }
+  .#{$prefix}bg-#{$color} {
+    background-color: $color;
+  }
+}

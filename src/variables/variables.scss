@@ -1,2 +1,20 @@
 // 样式前缀
-$prefix: "css__basic";
+$prefix: "se-";
+
+//颜色
+$primary:#007bff;
+$secondary:#6c757d;
+$success:#28a745;
+$danger:#dc3545;
+$warning:#ffc107;
+$info:#17a2b8;
+$dark: #343a40;
+$body: #212529;
+$muted: #6c757d;
+$white: #fff;
+$borderColor: #dee2e6;
+
+//颜色数组
+$colors: (primary, secondary, success, danger, warning, info, dark, body, muted, white);
+//方向数组
+$directions: (top, right, bottom, left);

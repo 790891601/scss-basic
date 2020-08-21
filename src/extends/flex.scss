@@ -1,0 +1,7 @@
+@import "../variables/variables.scss";
+
+@for $i from 1 to 5 {
+  .#{$prefix}flex#{$i} {
+    flex: $i;
+  }
+}

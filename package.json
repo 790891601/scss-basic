@@ -1,6 +1,6 @@
 {
   "name": "scss-basic",
-  "version": "1.0.5",
+  "version": "1.1.1",
   "description": "This is a scss basic",
   "main": "src/helpler.scss",
   "scripts": {
@@ -9,7 +9,9 @@
     "build:dev": "run-s copy",
     "clean": "rimraf dist",
     "copy": "cpy src/*.scss !src/*.min.scss docs/css",
-    "watch": "onchange src -- run-p build:dev"
+    "watch": "onchange src -- run-p build:dev",
+    "login": "npm login --registry http://registry.npmjs.org",
+    "publish": "npm publish --registry http://registry.npmjs.org"
   },
   "keywords": [
     "scss-basic",

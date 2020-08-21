@@ -1,0 +1,15 @@
+@import "../variables/variables.scss";
+
+.#{$prefix}clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+.#{$prefix}fl {
+  float: left;
+}
+.#{$prefix}fr {
+  float: right;
+}

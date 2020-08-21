@@ -12,30 +12,27 @@
   flex-wrap: $wrap;
 }
 /**
- * @params {px} $left 左边距
- * @params {px} $top 上边距
- * @params {absolute|fixed} $position 定位方式
- */
-@mixin plt($left:0px, $top:0px,$position:absolute,$transformX:0px,$transformY:0px) {
-  position: $position;
-  left: $left;
-  top: $top;
-  @if $transformX == 0px {
-    transform: translate(-$left, -$top);
-  }@else {
-    transform: translate($transformX, $transformY);
+  * @params {px} $top 上边距
+  * @params {px} $right 右边距
+  * @params {px} $bottom 下边距
+  * @params {px} $left 左边距
+  * @params {absolute|fixed|...} $position 定位方式
+  */
+@mixin position($top:null, $right:null, $bottom:null, $left:null, $position:absolute, $transformX:null, $transformY:0px) {
+  @if $top {
+    top: $top;
   }
-}
-/**
- * @params {px} $right 右边距
- * @params {px} $bottom 下边距
- * @params {absolute|fixed} $position 定位方式
- */
- @mixin prb($right:0px,$bottom:0px, $position:absolute,$transformX:0px,$transformY:0px) {
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
   position: $position;
-  right: $right;
-  bottom: $bottom;
-  @if $transformX != 0px {
+  @if $transformX {
     transform: translate($transformX, $transformY);
   }
 }
@@ -43,6 +40,7 @@
  * 宽高
  * @params {px} $width 宽度
  * @params {px} $height 高度
+ * @params {px} $borderRadius 边框圆角
  */
 @mixin wh($width: auto, $height: auto, $borderRadius...) {
   width: $width;
@@ -84,8 +82,8 @@
 /**
  * 文本
  * @params {px} $fontSize 字体大小
- * @params {px} $color 颜色
- * @params {px} $textAlign 文本对齐方式
+ * @params {rgb|16进制|white} $color 颜色
+ * @params {left|right|center} $textAlign 文本对齐方式
  */
 @mixin text($fontSize, $color, $textAlign, $textDecoration) {
   font-size: $fontSize;
@@ -102,10 +100,10 @@
  * @params {px} $width 高度
  * @params {px} $lineHeight 行高
  * @params {px} $color 高度
- * @params {px} $backgroundColor 背景颜色
+ * @params {color} $backgroundColor 背景颜色
  * @params {px} $borderWidth 边框宽度
- * @params {px} $borderColor 边框颜色
- * @params {type} $borderStyle 边框样式
+ * @params {color} $borderColor 边框颜色
+ * @params {solid|...} $borderStyle 边框样式
  */
 @mixin button($width, $lineHeight, $color: #000, $backgroundColor: white, $borderWidth:0px, $borderColor:white, $borderStyle: solid) {
   width: $width;
@@ -131,21 +129,30 @@
  * @params {px} $width 宽度
  * @params {px} $margin 外边距
  */
-@mixin container($width, $margin, $backgroundColor: white) {
+@mixin container($width, $margin: 0 auto, $backgroundColor: white) {
   width: $width;
-  margin: 0 auto;
+  margin: $margin;
   background-color: $backgroundColor;
 }
 
 /**
  * 滚动容器
- * @params {} $overflowY 竖向滚动条
- * @params {} $overflowX 横向滚动条
- * @params {} $width 宽度 
- * @params {} $height 高度
+ * @params {auto|hidden|scroll} $overflowY 竖向滚动条
+ * @params {auto|hidden|scroll} $overflowX 横向滚动条
+ * @params {px} $width 宽度 
+ * @params {px} $height 高度
  */
 @mixin scroll($overflowY: auto, $overflowX: auto, $width:auto, $height:auto) {
   overflow-x: $overflowX;
   overflow-y: $overflowY;
   @include wh($width, $height);
+}
+
+//清除浮动
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }

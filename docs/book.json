@@ -1,0 +1,9 @@
+{
+  "title": "CSS-Basic",
+  "description": "build-web-application-with-css-basic",
+  "author": "Visioniers",
+  "output.name": "build-web-application-with-css-basic-zh",
+	"pdf":{
+		"fontFamily":"微软雅黑"
+	}
+}
